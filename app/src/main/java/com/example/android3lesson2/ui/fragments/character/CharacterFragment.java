@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,8 @@ public class CharacterFragment extends Fragment {
 
    FragmentCharacterBinding binding;
 
+   String name = "Hello";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,5 +32,17 @@ public class CharacterFragment extends Fragment {
     @Override
     public void onViewCreated( View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        listener();
+    }
+
+    private void listener() {
+        binding.btnOpenDetailFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v)
+                        .navigate(CharacterFragmentDirections
+                                .actionGlobalDetailFragment().setId(name));
+            }
+        });
     }
 }
