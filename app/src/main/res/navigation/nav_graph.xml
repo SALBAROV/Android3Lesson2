@@ -13,11 +13,7 @@
         android:label="fragment_character"
         tools:layout="@layout/fragment_character" />
 
-    <fragment
-        android:id="@+id/episodesFragment"
-        android:name="com.example.android3lesson2.ui.fragments.episodes.EpisodesFragment"
-        android:label="fragment_episodes"
-        tools:layout="@layout/fragment_episodes" />
+
     <fragment
         android:id="@+id/locationFragment"
         android:name="com.example.android3lesson2.ui.fragments.location.LocationFragment"
@@ -33,5 +29,10 @@
             app:argType="string"
             android:defaultValue="0" />
     </fragment>
+    <fragment
+        android:id="@+id/episodesFragment"
+        android:name="com.example.android3lesson2.ui.fragments.episodes.EpisodesFragment"
+        android:label="fragment_episodes"
+        tools:layout="@layout/fragment_episodes" />
 
 </navigation>
